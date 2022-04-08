@@ -6,3 +6,27 @@
         CidrBlock: 10.0.0.0/16
         EnableDnsSupport: 'true'
         EnableDnsHostnames: 'true'
+
+    PublicSubnetVPCA:
+      Type: AWS::EC2::Subnet
+      Properties:
+        CidrBlock: 10.0.1.0/24
+        VpcId: !Ref VPCAula
+
+    PublicSubnetVPCB:
+      Type: AWS::EC2::Subnet
+      Properties:
+        CidrBlock: 10.0.2.0/24
+        VpcId: !Ref VPCAula
+
+    PrivateSubnetVPCA:
+      Type: AWS::EC2::Subnet
+      Properties:
+        CidrBlock: 10.0.3.0/24
+        VpcId: !Ref VPCAula
+
+    PrivateSubnetVPCB:
+      Type: AWS::EC2::Subnet
+      Properties:
+        CidrBlock: 10.0.4.0/24
+        VpcId: !Ref VPCAula
