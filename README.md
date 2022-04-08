@@ -32,7 +32,34 @@ aws cloudformation update-stack \
   --stack-name VPC \
   --template-body file://main.yaml
 ```
+## Exemplo de templates
+VPC
+```yaml
+  Resources:
+    VPCAula:
+      Type: AWS::EC2::VPC
+      Properties:
+        CidrBlock: 10.0.0.0/16
+        EnableDnsSupport: 'true'
+        EnableDnsHostnames: 'true'
+```
 
+Subnet
+```yaml
+  Resources:
+    VPCAula:
+      Type: AWS::EC2::VPC
+      Properties:
+        CidrBlock: 10.0.0.0/16
+        EnableDnsSupport: 'true'
+        EnableDnsHostnames: 'true'
+
+    PublicSubnetVPCA:
+      Type: AWS::EC2::Subnet
+      Properties:
+        CidrBlock: 10.0.1.0/24
+        VpcId: !Ref VPCAula
+```
 ## Links
 - [AWS CloudFormation](https://aws.amazon.com/pt/cloudformation/)
 - [AWS CloudFormation Documentation](https://docs.aws.amazon.com/cloudformation/index.html)
