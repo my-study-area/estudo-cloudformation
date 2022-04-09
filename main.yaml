@@ -30,3 +30,33 @@
       Properties:
         CidrBlock: 10.0.4.0/24
         VpcId: !Ref VPCAula
+
+    IGW:
+      Type: AWS::EC2::InternetGateway
+
+    AttachIGW:
+      Type: AWS::EC2::VPCGatewayAttachment
+      DependsOn: IGW
+      Properties:
+        VpcId: !Ref VPCAula
+        InternetGatewayId:
+          Ref: IGW
+
+    RT:
+      Type: AWS::EC2::RouteTable
+      Properties:
+        VpcId: !Ref VPCAula
+
+    RTtoIGW:
+      Type: AWS::EC2::Route
+      DependsOn: IGW
+      Properties:
+        RouteTableId: !Ref RT
+        DestinationCidrBlock: 0.0.0.0/0
+        GatewayId: !Ref IGW
+
+    RTAssoc:
+      Type: AWS::EC2::SubnetRouteTableAssociation
+      Properties:
+        RouteTableId: !Ref RT
+        SubnetId: !Ref PublicSubnetVPCA
