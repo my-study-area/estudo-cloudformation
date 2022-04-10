@@ -31,6 +31,35 @@ aws cloudformation update-stack \
   --endpoint-url http://localhost:4566 \
   --stack-name VPC \
   --template-body file://main.yaml
+
+# lista as vpcs
+ aws ec2 describe-vpcs \
+  --endpoint-url http://localhost:4566
+
+# lista todas as subnets
+aws ec2 describe-subnets \
+  --endpoint-url http://localhost:4566
+
+# lista todas as subnets filtrando pelo vpc-id
+aws ec2 describe-subnets \
+  --endpoint-url http://localhost:4566 \
+  --filters "Name=vpc-id,Values=vpc-ee3bef58"
+
+# lista as subnets que começam 10.0. no CidrBlock
+# e exibe somentee 2 registros
+aws ec2 describe-subnets \
+  --endpoint-url http://localhost:4566 \ 
+  --query "Subnets[?starts_with(CidrBlock,`10.0.`) == `true`] | [0:2]" | jq
+
+# lista as route tables
+aws ec2 describe-route-tables \
+  --endpoint-url http://localhost:4566
+
+# lista as route tables associadas
+aws ec2 describe-route-tables \
+  --endpoint-url http://localhost:4566 \
+  --query 'RouteTables[].Associations[]'
+
 ```
 ## Exemplo de templates
 VPC
@@ -67,4 +96,8 @@ Subnet
 - [Resource types](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html)
 - [Erro de CORS na GUI do dashboard do Localstack](https://pt.stackoverflow.com/questions/523577/erro-de-cors-no-commandeer-com-localstack)
 - [AWS CLI Command Reference for CloudFormation](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/index.html)
+- [AWS CLI Command Reference for EC2](https://docs.aws.amazon.com/cli/latest/reference/ec2/index.html#cli-aws-ec2)
+- [Filtering AWS CLI output](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html)
+- [Filtering AWS CLI output advanced queries](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html#cli-usage-filter-client-side-advanced)
+- [Filtering AWS CLI output advanced queries from issue in github](https://github.com/aws/aws-cli/issues/2206#issuecomment-250535857)
 - [Treinamento AWS Cloud Practitioner Essentials](https://explore.skillbuilder.aws/learn/course/external/view/elearning/134/aws-cloud-practitioner-essentials?dt=tile&tile=fdt)
