@@ -73,6 +73,10 @@ aws ec2 describe-instances \
 # lista os tópicos sns
 aws sns list-topics \
   --endpoint-url http://localhost:4566
+
+# lista os buckets 
+aws s3 ls \
+  --endpoint-url http://localhost:4566
 ```
 ## Exemplo de templates
 VPC
