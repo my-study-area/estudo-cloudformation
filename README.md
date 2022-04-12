@@ -69,6 +69,10 @@ aws ec2 describe-instances \
   --endpoint-url http://localhost:4566 \
   --query "Reservations[*].Instances[*].\
   {State:State.Name,PublicIp:PublicIpAddress,PrivateIp:PrivateIpAddress}"
+
+# lista os tópicos sns
+aws sns list-topics \
+  --endpoint-url http://localhost:4566
 ```
 ## Exemplo de templates
 VPC
@@ -106,6 +110,7 @@ Subnet
 - [Erro de CORS na GUI do dashboard do Localstack](https://pt.stackoverflow.com/questions/523577/erro-de-cors-no-commandeer-com-localstack)
 - [AWS CLI Command Reference for CloudFormation](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/index.html)
 - [AWS CLI Command Reference for EC2](https://docs.aws.amazon.com/cli/latest/reference/ec2/index.html#cli-aws-ec2)
+- [AWS CLI Command Reference for SNS](https://docs.aws.amazon.com/cli/latest/reference/sns/index.html)
 - [Filtering AWS CLI output](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html)
 - [Filtering AWS CLI output advanced queries](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html#cli-usage-filter-client-side-advanced)
 - [Filtering AWS CLI output advanced queries from issue in github](https://github.com/aws/aws-cli/issues/2206#issuecomment-250535857)

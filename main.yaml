@@ -68,3 +68,11 @@
         ImageId: ami-a4827dc9
         InstanceType: t2.micro
         SubnetId: !Ref PrivateSubnetVPCA
+
+    Topic:
+      Type: AWS::SNS::Topic
+      Properties: 
+        Subscription:
+          - EndPpoint: example@arroba.com
+            Protocol: email
+        TopicName: Topico
