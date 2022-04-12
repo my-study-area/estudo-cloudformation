@@ -60,6 +60,15 @@ aws ec2 describe-route-tables \
   --endpoint-url http://localhost:4566 \
   --query 'RouteTables[].Associations[]'
 
+# lista as instâncias ec2
+aws ec2 describe-instances \
+  --endpoint-url=http://localhost:4566 
+
+# lista as instâncias ec2 exibindo status e ips
+aws ec2 describe-instances \
+  --endpoint-url http://localhost:4566 \
+  --query "Reservations[*].Instances[*].\
+  {State:State.Name,PublicIp:PublicIpAddress,PrivateIp:PrivateIpAddress}"
 ```
 ## Exemplo de templates
 VPC

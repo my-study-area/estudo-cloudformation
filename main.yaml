@@ -60,3 +60,11 @@
       Properties:
         RouteTableId: !Ref RT
         SubnetId: !Ref PublicSubnetVPCA
+
+    Instance: 
+      Type: AWS::EC2::Instance
+      DependsOn: RTAssoc
+      Properties: 
+        ImageId: ami-a4827dc9
+        InstanceType: t2.micro
+        SubnetId: !Ref PrivateSubnetVPCA
