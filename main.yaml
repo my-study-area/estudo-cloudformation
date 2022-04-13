@@ -73,7 +73,7 @@
       Type: AWS::SNS::Topic
       Properties: 
         Subscription:
-          - EndPpoint: example@arroba.com
+          - Endpoint: example@arroba.com
             Protocol: email
         TopicName: Topico
 
