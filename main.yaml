@@ -100,3 +100,7 @@
       Value: !Ref Bucket
     StackName:
       Value: !Ref AWS::StackName
+    StackId:
+      Value: !Ref AWS::StackId
+    Region:
+      Value: !Ref AWS::Region

@@ -119,3 +119,4 @@ Subnet
 - [Filtering AWS CLI output advanced queries](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html#cli-usage-filter-client-side-advanced)
 - [Filtering AWS CLI output advanced queries from issue in github](https://github.com/aws/aws-cli/issues/2206#issuecomment-250535857)
 - [Treinamento AWS Cloud Practitioner Essentials](https://explore.skillbuilder.aws/learn/course/external/view/elearning/134/aws-cloud-practitioner-essentials?dt=tile&tile=fdt)
+- [Pseudo parameters reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/pseudo-parameter-reference.html)
