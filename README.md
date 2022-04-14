@@ -77,6 +77,10 @@ aws sns list-topics \
 # lista os buckets 
 aws s3 ls \
   --endpoint-url http://localhost:4566
+
+# lista os security-groups
+aws ec2 describe-security-groups \
+  --endpoint-url http://localhost:4566 
 ```
 ## Exemplo de templates
 VPC
