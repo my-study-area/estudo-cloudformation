@@ -1,4 +1,16 @@
 # estudo-cloudformation
+<p>
+    <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/my-study-area/estudo-cloudformation">
+    <a href="https://github.com/my-study-area">
+        <img alt="Made by" src="https://img.shields.io/badge/made%20by-adriano%20avelino-gree">
+    </a>
+    <img alt="Repository size" src="https://img.shields.io/github/repo-size/my-study-area/estudo-cloudformation">
+    <a href="https://github.com/EliasGcf/readme-template/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/my-study-area/estudo-cloudformation">
+    </a>
+</p>
+
+Anotações do curso de Cloudformation no [Youtube](https://www.youtube.com/playlist?list=PLt8D2V5latlHxsbYhKdDvi-zncorZn4Ey)
 
 ## Começando
 ```bash
@@ -8,6 +20,8 @@ docker-compose up -d
 # mostra a versão e serviços disponíveis
 curl -v http://localhost:4566/health | jq
 ```
+> Obs: para visualizar o log do localstak execute `docker-compose logs -f`
+
 Para acessar a interface gráfica do localstack acesse [https://app.localstack.cloud.](https://app.localstack.cloud.)
 ## Comandos
 ```bash
