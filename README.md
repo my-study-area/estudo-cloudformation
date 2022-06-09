@@ -12,13 +12,29 @@
 
 Anotações do curso de Cloudformation no [Youtube](https://www.youtube.com/playlist?list=PLt8D2V5latlHxsbYhKdDvi-zncorZn4Ey)
 
-## Começando
+## Passos para executar o projeto
 ```bash
+# clona o projeto
+git clone https://github.com/my-study-area/estudo-cloudformation.git
+
+# entra no diretório
+cd estudo-cloudformation
+
 # inicia o localstack
 docker-compose up -d
 
 # mostra a versão e serviços disponíveis
 curl -v http://localhost:4566/health | jq
+
+# cria uma stack
+aws cloudformation create-stack \
+  --endpoint-url http://localhost:4566 \
+  --stack-name VPC \
+  --template-body file://main.yaml 
+
+# lista todas as stacks
+aws cloudformation describe-stacks \
+  --endpoint-url http://localhost:4566
 ```
 > Obs: para visualizar o log do localstak execute `docker-compose logs -f`
 
