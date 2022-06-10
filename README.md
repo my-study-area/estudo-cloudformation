@@ -14,6 +14,11 @@
 
 Anotações do curso `Cloudformation` no [Canal DB Cloud](https://www.youtube.com/playlist?list=PLt8D2V5latlHxsbYhKdDvi-zncorZn4Ey) no Youtube.
 
+# Tecnologias
+- Docker/docker-compose para executar o Localstack
+- Localstack
+- Cloudformation/AWS
+
 ## Passos para executar o projeto
 ```bash
 # clona o projeto
