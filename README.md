@@ -10,6 +10,7 @@
     </a>
 </p>
 
+![Print da interface gráfica do Localstack listando as staks criadas no Cloudformation](./print.png)
 Anotações do curso de Cloudformation no [Youtube](https://www.youtube.com/playlist?list=PLt8D2V5latlHxsbYhKdDvi-zncorZn4Ey)
 
 ## Passos para executar o projeto
