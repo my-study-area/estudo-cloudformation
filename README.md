@@ -25,6 +25,8 @@ cd estudo-cloudformation
 docker-compose up -d
 
 # mostra a versão e serviços disponíveis
+# Obs: o comando `| jq` não é obrigatório e precisa ser instalado
+# localmente, para mais informações acesse: https://stedolan.github.io/jq/
 curl -v http://localhost:4566/health | jq
 
 # cria uma stack
@@ -39,7 +41,7 @@ aws cloudformation describe-stacks \
 ```
 > Obs: para visualizar o log do localstak execute `docker-compose logs -f`
 
-Para acessar a interface gráfica do localstack acesse [https://app.localstack.cloud.](https://app.localstack.cloud.)
+> Para acessar a interface gráfica do localstack acesse [https://app.localstack.cloud.](https://app.localstack.cloud.) e clique em `Resources` > `Cloudformation` 
 ## Comandos
 ```bash
 # cria uma stack
